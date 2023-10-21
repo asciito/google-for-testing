@@ -18,9 +18,71 @@ with the correct Browser Version, is painful (I **HATE** manual tasks), I decide
 
 **I HATE MANUAL TASKS**
 
+---
+
 ## Documentation
 
-_Working_...
+* [Commands](#commands)
+  * [Install Google Chrome Browser](#install-google-chrome-browser)
+  * [Install Google Chrome Driver](#install-google-chrome-driver)
+
+### Commands
+
+The two installation commands shares similar signatures, something like this:
+
+```bash
+./google-for-testing install:<browser|driver> [options]
+```
+
+There are three options available to change the way the command works.
+
+- **`--ver=[VER]`**:
+This option by default is set to `115.0.5763.0` in both commands.
+    > **Note**:
+    For the `install:driver` command, the default version it's really important, this is the started version from where you can get
+    the `chromedriver` binary, before that version, we don't have access to it (for now).
+
+- **`--latest`**:
+This option will download the latest version.
+
+- **`--path=[PATH]`**:
+This will let you choose where to download it.
+
+> **Note**:
+> The default location for every download is `$HOME/.google-for-testing`
+
+<br>
+
+#### Install Google Chrome Browser
+
+The syntax for to install Google Chrome Browser is the next one:
+
+```bash
+./google-for-testing install:browser [options]
+```
+
+Running this command without any option, will download the default version `115.0.5763.0`, but you can choose
+any other version to download (if is available).
+
+You can check the available versions on this [API endpoint](https://googlechromelabs.github.io/chrome-for-testing/known-good-versions.json) 👈
+
+<br>
+
+#### Install Google Chrome Driver
+
+The syntax for to install Google Chrome Driver is the next one:
+
+```bash
+./google-for-testing install:driver [options]
+```
+
+Running this command without any option, will download the default version `115.0.5763.0`, but you can choose
+any other version to download (if is available).
+
+> **Note**: You can check the available versions on this [API endpoint](https://googlechromelabs.github.io/chrome-for-testing/known-good-versions.json) 👈, but keep in mind
+> that for `chromedriver` the versions starts at `115.0.5763.0`, so any version below that we will not have access to the binary download link (for now).
+
+---
 
 ## License
 
